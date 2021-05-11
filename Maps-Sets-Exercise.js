@@ -20,32 +20,14 @@ vowelCount('awesome') // Map { 'a' => 1, 'e' => 2, 'o' => 1 }
 vowelCount('Colt') // Map { 'o' => 1 }
 
 
+function isVowel(char){
+    return 'aeiou'.includes(char);
+}
+
 function vowelCount(str) {
-    let strMap = new Map();
-    const vowels = "aeiou";
-    strMap.map(function(letter) {
-      let lowerCasedLetter = letter.toLowerCase()
-      if (vowels.indexOf(lowerCasedLetter) !== -1) {
-        if (obj[lowerCasedLetter]) {
-          obj[lowerCasedLetter]++;
-        } else {
-          obj[lowerCasedLetter] = 1;
-        }
-      }
-    });
-    return obj;
-  }
-
-
-
-  function isVowel(char){
-    return "aeiou".includes(char);
-  }
-  
-  function vowelCount(str){
-    const vowelMap = new Map();
+    let vowelMap = new Map();
     for(let char of str){
-      let lowerCaseChar = char.toLowerCase()
+        let lowerCaseChar = char.toLowerCase()
       if(isVowel(lowerCaseChar)){
         if(vowelMap.has(lowerCaseChar)){
           vowelMap.set(lowerCaseChar, vowelMap.get(lowerCaseChar) + 1);
